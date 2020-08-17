@@ -243,6 +243,7 @@ public class GameManager : MonoBehaviour
         gameOverScore.text = "Final Score: " + Mathf.RoundToInt(score).ToString();
         //scoreText.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
+        Camera.main.GetComponent<ScreenShake>().StopShake();
         Time.timeScale = 0;
 
     }

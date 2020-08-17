@@ -9,7 +9,7 @@ public class ScreenShake : MonoBehaviour
 
     float intensity = 2f;
     bool shakeScreen = false;
-
+    //bool stopShake = false;
 
     Vector3 originalPos;
 
@@ -27,12 +27,21 @@ public class ScreenShake : MonoBehaviour
         currTimer = 0f;
     }
 
+    public void StopShake()
+    {
+        shakeScreen = false;
+    }
+
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.H))
         //{
         //    shakeScreen = true;
         //}
+        if (!shakeScreen)
+        {
+            transform.position = originalPos;
+        }
 
         if (shakeScreen)
         {
